@@ -1,0 +1,66 @@
+.header__container {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__buttons {
+    @include clear-list;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__button {
+    padding: 32px 20px;
+
+    span {
+        display: none;
+
+        @media (min-width: $desktop-width) {
+            display: block;
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &--login a::before,
+    &--basket a::before,
+    &--menu a::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        mask-repeat: no-repeat;
+        mask-size: 16px 16px;
+        background-color: #333;
+    }
+
+    &--login a::before {
+        mask-image: url('../../assets/icon-login.svg');
+    }
+
+    &--basket a::before {
+        mask-image: url('../../assets/icon-basket.svg');
+    }
+
+    &--menu a::before {
+        mask-image: url('../../assets/icon-menu.svg');
+    }
+
+    @media (min-width: $tablet-width) {
+        &--menu {
+            display: none;
+        }
+    }
+}
