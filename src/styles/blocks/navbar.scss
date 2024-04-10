@@ -1,15 +1,21 @@
 .navbar {
     display: flex;
+
+    @media (max-width: $mobile-width-only) {
+        display: none;
+    }
 }
 
 .navbar__list {
-    @include clear-list;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
     @media (min-width: $tablet-width) {
+        @include clear-list;
+        display: flex;
+        align-items: center;
         gap: 0;
+    }
+
+    @media (min-width: $desktop-width) {
+        gap: 20px;
     }
 }
 

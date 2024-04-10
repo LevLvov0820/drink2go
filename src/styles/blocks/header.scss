@@ -1,19 +1,30 @@
 .header__container {
-    min-height: 80px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (min-width: $tablet-width) {
+        min-height: 80px;
+    }
 }
 
 .header__buttons {
     @include clear-list;
     display: flex;
     align-items: center;
-    gap: 20px;
+    
+    @media (min-width: $tablet-width) {
+        gap: 20px;
+    }
 }
 
 .header__button {
-    padding: 32px 20px;
+    padding: 22px;
+
+    @media (min-width: $tablet-width) {
+        padding: 32px 20px;
+    }
 
     span {
         display: none;
@@ -34,9 +45,16 @@
         text-transform: uppercase;
     }
 
+    button {
+        border: none;
+        background-color: inherit;
+        padding: 0;
+        display: block;
+    }
+
     &--login a::before,
     &--basket a::before,
-    &--menu a::before {
+    &--menu button::before {
         content: '';
         display: block;
         width: 16px;
@@ -54,7 +72,7 @@
         mask-image: url('../../assets/icon-basket.svg');
     }
 
-    &--menu a::before {
+    &--menu button::before {
         mask-image: url('../../assets/icon-menu.svg');
     }
 
@@ -62,5 +80,9 @@
         &--menu {
             display: none;
         }
+    }
+
+    &--menu {
+        padding-right: 0;
     }
 }
