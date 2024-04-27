@@ -1,11 +1,12 @@
 import React from 'react';
+import Container from '../layout/container';
 import Navbar from '../ui/navbar';
 import Logo from '../ui/logo';
 
 export default function Header({ navlinks }) {
     return (
         <header className='header'>
-            <div className="header__container container">
+            <Container className={'header__container'}>
                 <Logo className={'header__logo'} text={'Интернет-магазин кофейных напитков'} />
                 <Navbar navlinks={navlinks} />
                 <ul className='header__buttons'>
@@ -25,7 +26,7 @@ export default function Header({ navlinks }) {
                         </button>
                     </li>
                 </ul>
-            </div>
+            </Container>
         </header>
     )
 }
