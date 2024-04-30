@@ -1,0 +1,49 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.filter__name {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.filter__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter__prices {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 2px;
+        background-color: #bdbdbd;
+        left: 50%;
+        right: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.filter__options {
+    @include clear-list;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter__reset {
+    margin-top: 20px;
+    background-color: #fff;
+    color: #7859cf;
+}

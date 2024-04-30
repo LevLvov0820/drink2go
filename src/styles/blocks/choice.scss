@@ -1,0 +1,114 @@
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.choice__input {
+    appearance: none;
+    position: absolute;
+
+    &:not(:disabled)+.choice__radio {
+
+        &:hover,
+        &:focus {
+            border-color: #9070ec;
+
+            &::after {
+                background-color: rgba(120, 89, 207, 0.25);
+            }
+        }
+    }
+
+    &:checked+.choice__radio {
+        border-color: #7859cf;
+
+        &::after {
+            background-color: #7859cf;
+        }
+    }
+
+    &:disabled+.choice__radio+.choice__name {
+        color: #bdbdbd;
+    }
+
+    &:disabled+.choice__radio {
+        border-color: #e2e2e2;
+    }
+
+    &:checked+.choice__checkbox {
+        background-color: #7859cf;
+        transition: margin-left 500ms;
+
+        &::before {
+            margin-left: 18px;
+            transition: margin-left 500ms;
+        }
+    }
+
+    &:disabled+.choice__checkbox+.choice__name {
+        color: #bdbdbd;
+    }
+
+    &:disabled+.choice__checkbox {
+        background-color: #e2e2e2;
+
+        &::before {
+            background-color: #f8f8f8;
+        }
+    }
+
+    &:not(:disabled)+.choice__checkbox {
+
+        &:hover,
+        &:focus {
+            outline: 2px solid #9070ec;
+            background-color: rgba(120, 89, 207, 0.25);
+        }
+    }
+}
+
+.choice__radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #bdbdbd;
+    border-radius: 50%;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+    }
+}
+
+.choice__name {
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.choice__checkbox {
+    position: relative;
+    display: block;
+    width: 42px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #bdbdbd;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        transition: all 500ms;
+    }
+}

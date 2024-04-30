@@ -1,0 +1,39 @@
+.slider {
+  border: none;
+  box-shadow: none;
+  background-color: #eaeaea;
+  margin: 12px 0 36px;
+  height: 2px;
+
+  @media (min-width: $tablet-width) {
+    width: 223px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 318px;
+    margin-bottom: 34px;
+  }
+}
+
+.noUi-connects {
+  height: 4px;
+}
+
+.noUi-connect {
+  background-color: #9070EC;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #9070EC;
+  background-color: #fff;
+  border-radius: 50%;
+  top: -10px;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+}
