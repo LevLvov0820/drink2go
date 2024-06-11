@@ -4,10 +4,11 @@ import navlinks from './mocks/navlinks';
 import slides from './mocks/slides';
 import features from './mocks/features';
 import options from './mocks/options';
+import products from './mocks/products';
 
 function App() {
     return (
-        <PageWrapper navlinks={navlinks} slides={slides} features={features} options={options}/>
+        <PageWrapper navlinks={navlinks} slides={slides} features={features} options={options} products={products}/>
     )
 }
 

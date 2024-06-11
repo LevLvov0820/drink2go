@@ -1,0 +1,38 @@
+.select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    span {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+    }
+
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 165px;
+        background-color: inherit;
+        border: none;
+        padding: 4px 25px 4px 10px;
+        color: #7859cf;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        background-image: url('../../assets/select-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: 145px center;
+        background-size: 10px 6px;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        margin-left: auto;
+    }
+}

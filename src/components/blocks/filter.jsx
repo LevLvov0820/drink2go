@@ -5,7 +5,7 @@ import Slider from '../ui/slider';
 import FilterItem from '../ui/filter-item';
 import FilterOptions from '../ui/filter-options';
 
-export default function Filter({ options }) {
+export default function Filter({ options, onSubmit, onReset }) {
     const [values, setValues] = useState([0, 900]);
     const [checkedMilk, setCheckedMilk] = useState('Неважно');
     const [checkedCountries, setCheckedCountries] = useState(['Бразилия']);
@@ -27,23 +27,25 @@ export default function Filter({ options }) {
     }
 
     return (
-        <form className='filter'>
-            <FilterItem name={'Цена'}>
-                <Slider values={values} setValues={setValues} />
-                <div className='filter__prices'>
-                    <Textfield type={'number'} name={'min-price'} min={'0'} max={'1000'} value={values[0]} onChange={(evt) => handlePriceChange(evt)} />
-                    <Textfield type={'number'} name={'max-price'} min={'0'} max={'1000'} value={values[1]} onChange={(evt) => handlePriceChange(evt)} />
-                </div>
-            </FilterItem>
-            <FilterItem name={'Наличие молока'}>
-                <FilterOptions options={options.milkOptions} type={'radio'} name={'milk-type'} checked={checkedMilk} onChange={(evt) => setCheckedMilk(evt.target.value)} />
-            </FilterItem>
-            <FilterItem name={'Страна произрастания'}>
-                <FilterOptions options={options.countryOptions} type={'checkbox'} name={'country'} checked={checkedCountries} onChange={(evt) => handleCheckbox(evt.target.value)} />
-            </FilterItem>
-            <FilterItem>
+        <form className='filter' onSubmit={(evt) => onSubmit(evt, values, checkedMilk, checkedCountries)}>
+            <div className="filter__wrapper">
+                <FilterItem name={'Цена'}>
+                    <Slider values={values} setValues={setValues} />
+                    <div className='filter__prices'>
+                        <Textfield type={'number'} name={'min-price'} min={'0'} max={'1000'} value={values[0]} onChange={(evt) => handlePriceChange(evt)} />
+                        <Textfield type={'number'} name={'max-price'} min={'0'} max={'1000'} value={values[1]} onChange={(evt) => handlePriceChange(evt)} />
+                    </div>
+                </FilterItem>
+                <FilterItem name={'Наличие молока'}>
+                    <FilterOptions options={options.milkOptions} type={'radio'} name={'milk-type'} checked={checkedMilk} onChange={(evt) => setCheckedMilk(evt.target.value)} />
+                </FilterItem>
+                <FilterItem name={'Страна произрастания'}>
+                    <FilterOptions options={options.countryOptions} type={'checkbox'} name={'country'} checked={checkedCountries} onChange={(evt) => handleCheckbox(evt.target.value)} />
+                </FilterItem>
+            </div>
+            <FilterItem className={'filter__buttons'}>
                 <Button className={'filter__submit'} type='submit'>Применить</Button>
-                <Button className={'filter__reset'} type='reset'>Сбросить</Button>
+                <Button className={'filter__reset'} type='reset' onClick={(evt) => onReset(evt)}>Сбросить</Button>
             </FilterItem>
         </form>
     )

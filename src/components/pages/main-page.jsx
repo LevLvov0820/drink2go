@@ -3,12 +3,12 @@ import Hero from '../blocks/hero';
 import Features from '../blocks/features';
 import Catalog from '../blocks/catalog';
 
-export default function MainPage({ slides, features, options }) {
+export default function MainPage({ slides, features, options, products }) {
     return (
         <>
             <Hero slides={slides} />
             <Features features={features} />
-            <Catalog options={options}/>
+            <Catalog options={options} products={products}/>
         </>
     )
 }

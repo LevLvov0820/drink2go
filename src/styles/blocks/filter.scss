@@ -2,6 +2,24 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @media (min-width: $desktop-width) {
+        width: 318px;
+    }
+}
+
+.filter__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (min-width: $tablet-width) {
+        flex-direction: row;
+    }
+
+    @media (min-width: $desktop-width) {
+        flex-direction: column;
+    }
 }
 
 .filter__name {
@@ -15,6 +33,14 @@
 .filter__item {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: $tablet-width) {
+        width: 223px;
+    }
+
+    @media (min-width: $desktop-width) {
+        width: initial;
+    }
 }
 
 .filter__prices {
@@ -42,8 +68,35 @@
     gap: 20px;
 }
 
+.filter__buttons {
+    width: initial;
+    gap: 20px;
+
+    @media (min-width: $tablet-width) {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+}
+
+.filter__submit {
+    @media (min-width: $tablet-width) {
+        width: 137px;
+    }
+    
+    @media (min-width: $desktop-width) {
+        width: 149px;
+    }
+}
+
 .filter__reset {
-    margin-top: 20px;
     background-color: #fff;
     color: #7859cf;
+
+    @media (min-width: $tablet-width) {
+        width: 120px;
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 149px;
+    }
 }

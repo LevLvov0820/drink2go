@@ -1,0 +1,77 @@
+.card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 20px 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+
+    @media (min-width: $tablet-width) {
+        padding: 50px 30px 30px 30px;
+        width: 349px;
+        min-height: 480px;
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 317px;
+    }
+}
+
+.card__image {
+    display: block;
+    margin: 0 auto;
+}
+
+.card__name {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 700;
+    margin: 24px 0 4px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 24px;
+        line-height: 36px;
+        margin: 30px 0 10px;
+    }
+}
+
+.card__description {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: auto;
+    }
+}
+
+.card__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__price {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.card__button {
+    position: relative;
+    width: 141px;
+    padding-left: 46px;
+    font-size: 14px;
+    line-height: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 16px;
+        background-image: url('../../assets/catalog-basket.svg');
+        top: 10px;
+        left: 20px;
+    }
+}

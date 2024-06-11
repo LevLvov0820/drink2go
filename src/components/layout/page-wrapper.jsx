@@ -6,13 +6,14 @@ export default function PageWrapper({
     navlinks,
     slides,
     features,
-    options
+    options,
+    products
 }) {
     return (
         <>
             <Header navlinks={navlinks} />
             <main className='page__main'>
-                <MainPage slides={slides} features={features} options={options}/>
+                <MainPage slides={slides} features={features} options={options} products={products} />
             </main>
         </>
     )

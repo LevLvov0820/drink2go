@@ -21,4 +21,12 @@
     &::-webkit-outer-spin-button {
         appearance: none;
     }
+
+    @media (min-width: $tablet-width) {
+        width: initial;
+    }
+
+    @media (min-width: $desktop-width) {
+        width: 134px;
+    }
 }

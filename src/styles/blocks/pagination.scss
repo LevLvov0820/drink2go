@@ -1,0 +1,90 @@
+.pagination {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto;
+
+    @media (min-width: $tablet-width) {
+        margin: 40px 0 0 auto;
+    }
+}
+
+.pagination__pages {
+    @include clear-list;
+    display: flex;
+    gap: 20px;
+}
+
+.pagination__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #7859cf;
+    text-align: center;
+    padding: 8px;
+
+    &--active {
+        background-color: inherit;
+        color: #333333;
+        font-weight: 600;
+    }
+}
+
+.pagination__prev,
+.pagination__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+
+    @media (min-width: $tablet-width) {
+        padding: 8px 20px;
+        width: initial;
+        height: initial;
+    }
+}
+
+.pagination__prev::after,
+.pagination__next::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    mask-image: url('../../assets/arrow-pagination.svg');
+    background-color: #7859cf;
+    mask-repeat: no-repeat;
+
+    @media (min-width: $tablet-width) {
+        width: initial;
+        height: initial;
+        font-size: 16px;
+        line-height: 24px;
+        color: #7859cf;
+        mask-image: none;
+        background-color: inherit;
+    }
+}
+
+.pagination__prev::after {
+    @media (min-width: $tablet-width) {
+        content: 'Назад';
+    }
+}
+
+.pagination__next::after {
+    @media (max-width: 767px) {
+        transform: rotate(180deg);
+    }
+
+    @media (min-width: $tablet-width) {
+        content: 'Вперед';
+    }
+}
